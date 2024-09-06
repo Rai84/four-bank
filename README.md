@@ -1,40 +1,21 @@
-**TELA DE LOGIN** 
+# Banco API
 
-Faça Login  
-Abra a sua conta
+## Descrição
 
-**LOGIN**
+A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece serviços bancários essenciais. A API permite gerenciar contas bancárias, realizar transferências, consultar saldos, e muito mais. A aplicação é construída utilizando Java e conecta-se a um banco de dados MySQL.
 
-Seu CPF  
-Sua senha
+## Funcionalidades
 
-**Abra sua conta**
-
-Nome  
-CPF  
-RG  
-Telefone  
+- **Gerenciamento de Contas:**
+  - Criação, consulta, atualização e exclusão de contas bancárias.
   
-Salvar
+- **Operações Financeiras:**
+  - Pix, transferências, Pagamento de boletos e Recarga de celular.
 
-**MENU**
+- **Consultas:**
+  - Consulta de saldo, extrato de transações.
 
-Perfil  
-Home  
-Chat  
-Notificação  
-  
-configuração
+## Requisitos
 
-**SALDO DA CONTA**
-
-Total da conta
-
-**COFRINHO**
-
-Separar
-Total da conta
-
-**Suporte**
-
-Btn de ajuda
+- **Java 17** ou superior
+- **MySQL** (ou qualquer banco de dados compatível)
