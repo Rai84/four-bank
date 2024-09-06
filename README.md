@@ -19,3 +19,33 @@ A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece s
 
 - **Java 17** ou superior
 - **MySQL** (ou qualquer banco de dados compatível)
+
+## Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Rai84/pi.git
+   cd banco-api
+   ```
+
+2. Configure o banco de dados MySQL:
+
+   - Crie um banco de dados chamado `banco_pi`.
+   - Atualize as credenciais do banco de dados no arquivo `src/database/DatabaseManager.java`.
+
+3. Compile e execute a aplicação:
+
+   ```bash
+   
+   ```
+
+4. A API estará disponível em `http://localhost:5500`.
+
+## Contato
+
+#### Desenvolvido por 
+  - [Rai Gonçalves](https://github.com/Rai84)
+  - [Pedro Alves](https://github.com/PedroTheProgramer)
+  - [Talita Keniata](https://github.com/Keniata15)
+  - [Kelly Cristina](https://github.com/kellycmds239)
