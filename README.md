@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Banco API
 
 ## Descrição
@@ -7,9 +6,6 @@ A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece s
 
 ## Funcionalidades
 
-=======
-
-
 # Banco API
 
 ## Descrição
@@ -18,7 +14,6 @@ A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece s
 
 ## Funcionalidades
 
->>>>>>> 98d0d7a14229b3d87e003cda373829101e90e2ae
 - **Gerenciamento de Contas:**
   - Criação, consulta, atualização e exclusão de contas bancárias.
   
@@ -43,7 +38,6 @@ A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece s
    ```
 
 2. Configure o banco de dados MySQL:
-<<<<<<< HEAD
 
    - Crie um banco de dados chamado `banco_pi`.
    - Atualize as credenciais do banco de dados no arquivo `src/database/DatabaseManager.java`.
@@ -64,7 +58,6 @@ A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece s
   - [Talita Keniata](https://github.com/Keniata15)
   - [Kelly Cristina](https://github.com/kellycmds239)
 
-=======
 
    - Crie um banco de dados chamado `banco_pi`.
    - Atualize as credenciais do banco de dados no arquivo `src/database/DatabaseManager.java`.
