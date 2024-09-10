@@ -2,7 +2,7 @@ import java.util.Scanner;
 import model.Cadastro;
 import service.CadastroService;
 
-public class app {
+public class App {
 
     static Scanner scan = new Scanner(System.in);
     static CadastroService cadastroService = new CadastroService(); // Corrigido para usar CadastroService
