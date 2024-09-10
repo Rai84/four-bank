@@ -1,40 +1,52 @@
-**TELA DE LOGIN** 
+# Banco API
 
-Faça Login  
-Abra a sua conta
+## Descrição
 
-**LOGIN**
+A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece serviços bancários essenciais. A API permite gerenciar contas bancárias, realizar transferências, consultar saldos, e muito mais. A aplicação é construída utilizando Java e conecta-se a um banco de dados MySQL.
 
-Seu CPF  
-Sua senha
+## Funcionalidades
 
-**Abra sua conta**
-
-Nome  
-CPF  
-RG  
-Telefone  
+- **Gerenciamento de Contas:**
+  - Criação, consulta, atualização e exclusão de contas bancárias.
   
-Salvar
+- **Operações Financeiras:**
+  - Pix, transferências, Pagamento de boletos e Recarga de celular.
 
-**MENU**
+- **Consultas:**
+  - Consulta de saldo, extrato de transações.
 
-Perfil  
-Home  
-Chat  
-Notificação  
-  
-configuração
+## Requisitos
 
-**SALDO DA CONTA**
+- **Java 17** ou superior
+- **MySQL** (ou qualquer banco de dados compatível)
 
-Total da conta
+## Instalação
 
-**COFRINHO**
+1. Clone o repositório:
 
-Separar
-Total da conta
+   ```bash
+   git clone https://github.com/Rai84/pi.git
+   cd banco-api
+   ```
 
-**Suporte**
+2. Configure o banco de dados MySQL:
 
-Btn de ajuda
+   - Crie um banco de dados chamado `banco_pi`.
+   - Atualize as credenciais do banco de dados no arquivo `src/database/DatabaseManager.java`.
+
+3. Compile e execute a aplicação:
+
+   ```bash
+   
+   ```
+
+4. A API estará disponível em `http://localhost:5500`.
+
+## Contato
+
+#### Desenvolvido por 
+  - [Rai Gonçalves](https://github.com/Rai84)
+  - [Pedro Alves](https://github.com/PedroTheProgramer)
+  - [Talita Keniata](https://github.com/Keniata15)
+  - [Kelly Cristina](https://github.com/kellycmds239)
+

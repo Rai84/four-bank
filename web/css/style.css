@@ -1,10 +1,24 @@
 :root {
-    --cor-fundo: #262626;
-    --cor-fundo2: #e0e0e0;
+    --cor-fundo1: #e0e0e0;
+    --cor-fundo2: #262626;
 
-    --cor-5: #383838;
-    --cor-6: #1E1E1E;
-    --cor-7: #F65100;
-    --cor-8: #FFD700;
+    --cor-1: #8c152f;
+    --cor-2: #3833A0;
+    --cor-3: #B8B8B8;
+    --cor-4: #999999;
+    
+}
+
+body {
+    background-color: var(--cor-fundo1);
+    font-family: 'Roboto', sans-serif;	
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    color: black;
     
 }
