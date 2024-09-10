@@ -77,4 +77,3 @@ A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece s
   - [Pedro Alves](https://github.com/PedroTheProgramer)
   - [Talita Keniata](https://github.com/Keniata15)
   - [Kelly Cristina](https://github.com/kellycmds239)
->>>>>>> 98d0d7a14229b3d87e003cda373829101e90e2ae
