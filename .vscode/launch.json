@@ -3,6 +3,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "four-bank_91d2e74c"
+        },
+        {
+            "type": "java",
             "name": "app",
             "request": "launch",
             "mainClass": "app",
