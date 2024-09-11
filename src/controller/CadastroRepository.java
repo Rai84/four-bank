@@ -3,7 +3,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import database.DatabaseManager;
+
+import database.management.DatabaseManager;
 import model.Cadastro;
 
 public class CadastroRepository {

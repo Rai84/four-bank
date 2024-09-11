@@ -4,7 +4,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import database.DatabaseManager;
+import database.management.DatabaseManager;
 import model.Cliente;
 
 public class ClienteRepository {
