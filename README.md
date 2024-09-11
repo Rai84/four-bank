@@ -35,14 +35,20 @@ A **FOUR-BANK API** é uma aplicação backend desenvolvida em Java, projetada p
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/Rai84/four-bank.git
+   git clone https://github.com/Rai84/pi.git
    cd banco-api
    ```
 
 2. Configure o banco de dados MySQL:
 
    - Crie um banco de dados chamado `banco_pi`.
-   - Atualize as credenciais do banco de dados no arquivo `src/database/DatabaseManager.java`.
+   - Execute o script SQL localizado em `src/database/four_bank.sql` para criar as tabelas necessárias:
+
+     ```bash
+     mysql -u seu_usuario -p banco_pi < src/database/four_bank.sql
+     ```
+
+   - Atualize as credenciais do banco de dados no arquivo `src/database/DatabaseManager.java` com seu usuário, senha e URL do banco de dados MySQL.
 
 3. Compile e execute a aplicação:
 
@@ -52,6 +58,8 @@ A **FOUR-BANK API** é uma aplicação backend desenvolvida em Java, projetada p
    ```
 
 4. A API estará disponível em `http://localhost:5500`.
+
+---
 
 ## Contato
 
