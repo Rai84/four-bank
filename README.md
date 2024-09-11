@@ -35,7 +35,7 @@ A **FOUR-BANK API** é uma aplicação backend desenvolvida em Java, projetada p
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/Rai84/pi.git
+   git clone https://github.com/Rai84/four-bank.git
    cd banco-api
    ```
 
