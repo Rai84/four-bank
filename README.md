@@ -1,32 +1,34 @@
-# Banco API
+# FOUR-BANK API
 
 ## Descrição
 
-A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece serviços bancários essenciais. A API permite gerenciar contas bancárias, realizar transferências, consultar saldos, e muito mais. A aplicação é construída utilizando Java e conecta-se a um banco de dados MySQL.
+A **FOUR-BANK API** é uma aplicação backend desenvolvida em Java, projetada para oferecer serviços bancários essenciais, abrangendo tanto operações financeiras com moeda fiduciária quanto com criptomoedas. A API permite gerenciar contas bancárias, realizar transferências, consultar saldos e operar com criptomoedas. A aplicação se conecta a um banco de dados MySQL para o armazenamento e gerenciamento dos dados.
 
-## Funcionalidades
+## Funcionalidades  
 
-# Banco API
-
-## Descrição
-
-A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece serviços bancários essenciais. A API permite gerenciar contas bancárias, realizar transferências, consultar saldos, e muito mais. A aplicação é construída utilizando Java e conecta-se a um banco de dados MySQL.
-
-## Funcionalidades
+### Moeda Fiduciária
 
 - **Gerenciamento de Contas:**
-  - Criação, consulta, atualização e exclusão de contas bancárias.
+  - Criar, consultar, atualizar e excluir contas bancárias.
   
 - **Operações Financeiras:**
-  - Pix, transferências, Pagamento de boletos e Recarga de celular.
+  - Transferências via Pix, pagamento de boletos e recarga de celular.
 
 - **Consultas:**
-  - Consulta de saldo, extrato de transações.
+  - Saldo e extrato de transações.  
+
+### Criptomoedas
+
+- **Consultas:**
+  - Verificação de saldo e extratos de criptomoedas.
+
+- **Operações Financeiras:**
+  - Compra e venda de criptomoedas.
 
 ## Requisitos
 
 - **Java 17** ou superior
-- **MySQL** (ou qualquer banco de dados compatível)
+- **MySQL** ou outro banco de dados compatível
 
 ## Instalação
 
@@ -45,17 +47,18 @@ A **Banco API** é uma aplicação de backend desenvolvida em Java que fornece s
 3. Compile e execute a aplicação:
 
    ```bash
-   
+   javac -cp "path/to/mysql-connector.jar" src/*.java
+   java -cp "path/to/mysql-connector.jar:." Main
    ```
 
 4. A API estará disponível em `http://localhost:5500`.
 
 ## Contato
 
-#### Desenvolvido por 
+#### Desenvolvedores:
   - [Rai Gonçalves](https://github.com/Rai84)
   - [Pedro Alves](https://github.com/PedroTheProgramer)
   - [Talita Keniata](https://github.com/Keniata15)
   - [Kelly Cristina](https://github.com/kellycmds239)
 
-
+---
