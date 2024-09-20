@@ -1,4 +1,4 @@
-package database.management;
+package controller;
 // conectar ao banco de dados
 
 import java.sql.Connection;
