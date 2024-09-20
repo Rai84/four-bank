@@ -27,7 +27,7 @@ A **FOUR-BANK API** é uma aplicação backend desenvolvida em Java, projetada p
  
 ## Protótipos
 
-Acesse o [protótipo High Fidelity](https://figma.com/seu-link-aqui) para visualizar o design completo da interface da aplicação.
+Acesse o [protótipo High Fidelity](https://www.figma.com/design/fQjVmMJRd2LiwFXE2JEQS7/Untitled?node-id=0-1&t=VZBmfRrC2gM4xnQJ-1) para visualizar o design completo da interface da aplicação.
 
 ## Requisitos
 
