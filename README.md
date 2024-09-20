@@ -24,6 +24,10 @@ A **FOUR-BANK API** é uma aplicação backend desenvolvida em Java, projetada p
 
 - **Operações Financeiras:**
   - Compra e venda de criptomoedas.
+ 
+## Protótipos
+
+Acesse o [protótipo High Fidelity](https://figma.com/seu-link-aqui) para visualizar o design completo da interface da aplicação.
 
 ## Requisitos
 
