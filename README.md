@@ -61,7 +61,7 @@ Acesse o [protótipo High Fidelity](https://www.figma.com/design/fQjVmMJRd2LiwFX
    java -cp "path/to/mysql-connector.jar:." Main
    ```
 
-4. A API estará disponível em `http://localhost:5500`.
+4. A API estará disponível em `http://localhost:8080`.
 
 ---
 
