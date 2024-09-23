@@ -61,7 +61,16 @@ Acesse o [protótipo High Fidelity](https://www.figma.com/design/fQjVmMJRd2LiwFX
    java -cp "path/to/mysql-connector.jar:." Main
    ```
 
-4. A API estará disponível em `http://localhost:8080`.
+4. ## Executando a Aplicação
+
+Após configurar o banco de dados e compilar o código, execute a aplicação com o comando:
+
+```bash
+mvn tomcat7:run
+```  
+
+A API estará disponível em `http://localhost:8080`.
+
 
 ---
 
