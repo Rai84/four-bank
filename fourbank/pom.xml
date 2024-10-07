@@ -1,64 +1,71 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>br.com.fourbank</groupId>
-  <artifactId>fourbank</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>fourbank Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  
+                                                                                        <!--Identificação do projeto -->
+  <groupId>br.com.fourbank</groupId>                                                                                                                 <!-- ID do grupo do projeto -->
+  <artifactId>fourbank</artifactId>                                                                                                        <!-- ID do artefato (nome do projeto) -->
+  <packaging>war</packaging>                                                                             <!-- Tipo de empacotamento, neste caso um WAR (Web Application Archive) -->
+  <version>1.0-SNAPSHOT</version>                                                                                                                         <!-- Versão do projeto -->
+  <name>fourbank Maven Webapp</name>                                                                                                                        <!-- Nome do projeto -->
+  <url>http://maven.apache.org</url>                                                                                    <!-- URL do projeto, normalmente a documentação do Maven -->
+
   <dependencies>
+                                                                                        <!-- Dependências do projeto -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <groupId>junit</groupId>                                                                                                                               <!-- Grupo do JUnit -->
+      <artifactId>junit</artifactId>                                                                                                                            <!-- ID do JUnit -->
+      <version>3.8.1</version>                                                                                                                              <!-- Versão do JUnit -->
+      <scope>test</scope>                                                                                                   <!-- Escopo da dependência, usada apenas para testes -->
     </dependency>
 
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>javax.servlet-api</artifactId>
-      <version>3.0.1</version>
-      <scope>provided</scope>
+      <groupId>javax.servlet</groupId>                                             <!-- Grupo para a API de Servlets -->
+      <artifactId>javax.servlet-api</artifactId>                                                                                                      <!-- ID da API de Servlets -->
+      <version>3.0.1</version>                                                                                                                    <!-- Versão da API de Servlets -->
+      <scope>provided</scope>                                                                            <!-- Indica que a dependência será fornecida pelo servidor de aplicação -->
     </dependency>
 
     <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>jstl</artifactId>
-      <version>1.2</version>
+      <groupId>javax.servlet</groupId>                                                                              <!-- Grupo para JSTL (JavaServer Pages Standard Tag Library) -->
+      <artifactId>jstl</artifactId>                                                                                                                              <!-- ID da JSTL -->
+      <version>1.2</version>                                                                                                                                 <!-- Versão da JSTL -->
     </dependency>
     
   </dependencies>
+  
   <build>
-    <finalName>fourbank</finalName>
+    <finalName>fourbank</finalName>                                                    <!-- Nome final do WAR gerado -->
 
     <plugins>
       <plugin>
-        <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>2.1</version>
+        <groupId>org.apache.tomcat.maven</groupId>                                    <!-- Grupo do plugin do Tomcat -->
+        <artifactId>tomcat7-maven-plugin</artifactId>                                                                                                <!-- ID do plugin do Tomcat -->
+        <version>2.1</version>                                                                                                                             <!-- Versão do plugin -->
         <configuration>
-          <path>/</path>
+          <path>/</path>                                                                                                          <!-- Caminho no qual a aplicação será acessada -->
         </configuration>
         <executions>
           <execution>
-            <id>tomcat-run</id>
+            <id>tomcat-run</id>                                                                                                                    <!-- ID da execução do plugin -->
             <goals>
-              <goal>exec-war</goal>
+              <goal>exec-war</goal>                                                                                                                  <!-- Meta que executa o WAR -->
             </goals>
-            <phase>package</phase>
+            <phase>package</phase>                                                                                  <!-- Fase do ciclo de vida do Maven onde a execução ocorrerá -->
             <configuration>
-              <enableNaming>false</enableNaming>
+              <enableNaming>false</enableNaming>                                                                                         <!-- Configuração do nome, desabilitado -->
             </configuration>
           </execution>
         </executions>
       </plugin>
+      
       <plugin>
-        <artifactId>maven-war-plugin</artifactId>
-        <version>3.2.2</version>
+        <artifactId>maven-war-plugin</artifactId>                                                                                             <!-- Plugin para empacotamento WAR -->
+        <version>3.2.2</version>                                                                                                                           <!-- Versão do plugin -->
         <configuration>
-          <webXml>src\main\webapp\WEB-INF\web.xml</webXml>
-          <warSourceDirectory>src/main/webapp</warSourceDirectory>
+          <webXml>src\main\webapp\WEB-INF\web.xml</webXml>                                                                                   <!-- Caminho para o arquivo web.xml -->
+          <warSourceDirectory>src/main/webapp</warSourceDirectory>                       <!-- Diretório fonte do WAR -->
         </configuration>
       </plugin>
     </plugins>
