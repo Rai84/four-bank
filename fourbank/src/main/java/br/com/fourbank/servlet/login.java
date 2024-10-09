@@ -1,5 +1,8 @@
 package br.com.fourbank.servlet;
 
-public class login {
+import javax.servlet.http.HttpServlet;
+
+
+public class login extends HttpServlet {
     
 }
