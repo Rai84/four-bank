@@ -3,21 +3,21 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   
-                                                                                        <!--Identificação do projeto -->
+  <!--Identificação do projeto -->
   <groupId>br.com.fourbank</groupId>                                                                                                                 <!-- ID do grupo do projeto -->
   <artifactId>fourbank</artifactId>                                                                                                        <!-- ID do artefato (nome do projeto) -->
-  <packaging>war</packaging>                                                                             <!-- Tipo de empacotamento, neste caso um WAR (Web Application Archive) -->
+  <packaging>war</packaging> <!-- Tipo de empacotamento, neste caso um WAR (Web Application Archive) -->
   <version>1.0-SNAPSHOT</version>                                                                                                                         <!-- Versão do projeto -->
   <name>fourbank Maven Webapp</name>                                                                                                                        <!-- Nome do projeto -->
-  <url>http://maven.apache.org</url>                                                                                    <!-- URL do projeto, normalmente a documentação do Maven -->
+  <url>http://maven.apache.org</url> <!-- URL do projeto, normalmente a documentação do Maven -->
 
   <dependencies>
-                                                                                        <!-- Dependências do projeto -->
+    <!-- Dependências do projeto -->
     <dependency>
       <groupId>junit</groupId>                                                                                                                               <!-- Grupo do JUnit -->
       <artifactId>junit</artifactId>                                                                                                                            <!-- ID do JUnit -->
       <version>3.8.1</version>                                                                                                                              <!-- Versão do JUnit -->
-      <scope>test</scope>                                                                                                   <!-- Escopo da dependência, usada apenas para testes -->
+      <scope>test</scope> <!-- Escopo da dependência, usada apenas para testes -->
     </dependency>
 
     <dependency>
@@ -29,7 +29,7 @@
 
 
     <dependency>
-      <groupId>javax.servlet</groupId>                                                                              <!-- Grupo para JSTL (JavaServer Pages Standard Tag Library) -->
+      <groupId>javax.servlet</groupId> <!-- Grupo para JSTL (JavaServer Pages Standard Tag Library) -->
       <artifactId>jstl</artifactId>                                                                                                                              <!-- ID da JSTL -->
       <version>1.2</version>                                                                                                                                 <!-- Versão da JSTL -->
     </dependency>
@@ -50,15 +50,15 @@
   </dependencies>
   
   <build>
-    <finalName>fourbank</finalName>                                                    <!-- Nome final do WAR gerado -->
+    <finalName>fourbank</finalName> <!-- Nome final do WAR gerado -->
 
     <plugins>
       <plugin>
-        <groupId>org.apache.tomcat.maven</groupId>                                    <!-- Grupo do plugin do Tomcat -->
+        <groupId>org.apache.tomcat.maven</groupId> <!-- Grupo do plugin do Tomcat -->
         <artifactId>tomcat7-maven-plugin</artifactId>                                                                                                <!-- ID do plugin do Tomcat -->
         <version>2.1</version>                                                                                                                             <!-- Versão do plugin -->
         <configuration>
-          <path>/</path>                                                                                                          <!-- Caminho no qual a aplicação será acessada -->
+          <path>/</path> <!-- Caminho no qual a aplicação será acessada -->
         </configuration>
         <executions>
           <execution>
@@ -66,7 +66,7 @@
             <goals>
               <goal>exec-war</goal>                                                                                                                  <!-- Meta que executa o WAR -->
             </goals>
-            <phase>package</phase>                                                                                  <!-- Fase do ciclo de vida do Maven onde a execução ocorrerá -->
+            <phase>package</phase> <!-- Fase do ciclo de vida do Maven onde a execução ocorrerá -->
             <configuration>
               <enableNaming>false</enableNaming>                                                                                         <!-- Configuração do nome, desabilitado -->
             </configuration>
@@ -79,7 +79,7 @@
         <version>3.2.2</version>                                                                                                                           <!-- Versão do plugin -->
         <configuration>
           <webXml>src\main\webapp\WEB-INF\web.xml</webXml>                                                                                   <!-- Caminho para o arquivo web.xml -->
-          <warSourceDirectory>src/main/webapp</warSourceDirectory>                       <!-- Diretório fonte do WAR -->
+          <warSourceDirectory>src/main/webapp</warSourceDirectory> <!-- Diretório fonte do WAR -->
         </configuration>
       </plugin>
     </plugins>
