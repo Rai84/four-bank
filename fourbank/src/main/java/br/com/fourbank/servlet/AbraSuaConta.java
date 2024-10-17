@@ -1,23 +1,23 @@
-package br.com.fourbank.servlet;
-
-import br.com.fourbank.dao.clienteDAO;
-import br.com.fourbank.model.cliente;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-@WebServlet("/AbraSuaContaTeste")
+import br.com.fourbank.dao.ContaDAO;
+import br.com.fourbank.model.Conta;
+import br.com.fourbank.dao.ClienteDAO;
+import br.com.fourbank.model.Cliente;
+import br.com.fourbank.dao.DatabaseConnection; 
+
+@WebServlet("/AbraSuaConta")
 public class AbraSuaConta extends HttpServlet {
-
     @Override
-        protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String nome = req.getParameter("name");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("UTF-8");
+
+        String nome = req.getParameter("nome");
         String cpf = req.getParameter("cpf");
         String endereco = req.getParameter("endereco");
         String telefone = req.getParameter("telefone");
@@ -25,8 +25,8 @@ public class AbraSuaConta extends HttpServlet {
         String dataNascimento = req.getParameter("data_nascimento");
         String senha = req.getParameter("senha");
 
-        cliente novoCliente = new cliente();
-        novoCliente.setName(nome);
+        Cliente novoCliente = new Cliente();
+        novoCliente.setNome(nome);
         novoCliente.setCpf(cpf);
         novoCliente.setEndereco(endereco);
         novoCliente.setTelefone(telefone);
@@ -34,14 +34,8 @@ public class AbraSuaConta extends HttpServlet {
         novoCliente.setDataNascimento(dataNascimento);
         novoCliente.setSenha(senha);
 
-        // Chama o método de inserção
-        clienteDAO dao = new clienteDAO();
-        dao.insert(novoCliente);
+        ClienteDAO clienteDAO = new ClienteDAO();
+        clienteDAO.insert(novoCliente); 
 
-        // Redireciona para a página de login após a inserção
-        req.getRequestDispatcher("login.html").forward(req, resp);
     }
-
 }
-
-

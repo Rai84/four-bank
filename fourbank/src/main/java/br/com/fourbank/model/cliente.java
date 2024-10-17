@@ -1,7 +1,7 @@
 package br.com.fourbank.model;
 
-public class cliente {
-    private String name;
+public class Cliente {
+    private String nome;
     private String cpf;
     private String endereco;
     private String telefone;
@@ -9,12 +9,12 @@ public class cliente {
     private String dataNascimento;
     private String senha;
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getCpf() {
