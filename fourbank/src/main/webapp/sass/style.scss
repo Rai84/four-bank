@@ -1,0 +1,80 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-size: 18px;
+    color: $cor-texto;
+    background-color: $cor-fundo;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn-primary1 {
+    @include botao1($cor-2, 200px);
+}
+
+.btn-primary2 {
+    @include botao1($cor-1, 170px);
+}
+
+// menu
+.menu {
+    background-color: aqua;
+    width: 40px;
+    height: 90vh;
+    display: flex;
+    margin-left: 15px;
+    border-radius: 100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    li {
+        i {
+            font-size: 25px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        i:hover {
+            color: var(--cor-1);
+        }
+    }
+}
+
+// tela 1
+.containerBemVindo{
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        text-align: center;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 40px;
+        font-weight: 700;
+
+        span {
+            color: $cor-1;
+            font-weight: 200;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+
+        input {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+
+

@@ -1,0 +1,16 @@
+@import 'variables';
+
+@mixin botao1($cor, $tamanho) {
+    background-color: $cor;
+    padding: 10px $tamanho;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    color: $cor-texto;
+
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: darken($cor, 10%);
+    }
+}
