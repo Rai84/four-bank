@@ -127,6 +127,17 @@ body {
   background-color: rgb(152.9342105263, 24.0657894737, 72.1973684211);
 }
 
+.btn-menu {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.btn-menu:hover {
+  color: #C51F5D;
+}
+
 .menu {
   background-color: aqua;
   width: 40px;
