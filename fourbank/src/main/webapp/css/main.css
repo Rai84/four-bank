@@ -99,6 +99,15 @@ body {
   color: #e0e0e0;
   background-color: #262626;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxsForm {
+  margin: 3px solid #C51F5D;
+  width: 600px;
+  height: 500px;
 }
 
 .btn-primary1 {
@@ -128,7 +137,7 @@ body {
 }
 
 .menu {
-  background-color: aqua;
+  background-color: #21201F;
   width: 40px;
   height: 90vh;
   display: flex;
@@ -137,6 +146,9 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  left: 5px;
+  top: 35px;
 }
 .menu li i {
   font-size: 25px;
@@ -144,16 +156,18 @@ body {
   display: block;
 }
 .menu li i:hover {
-  color: var(--cor-1);
+  color: #C51F5D;
+}
+.menu a {
+  font-size: 25px;
+  margin-bottom: 10px;
+  display: block;
+}
+.menu a:hover {
+  color: #C51F5D;
 }
 
-.containerBemVindo {
-  display: flex;
-  margin-top: 50px;
-  flex-direction: column;
-  align-items: center;
-}
-.containerBemVindo h1 {
+#containerBemVindo h1 {
   text-align: center;
   margin-top: 50px;
   display: flex;
@@ -162,18 +176,18 @@ body {
   font-size: 40px;
   font-weight: 700;
 }
-.containerBemVindo h1 span {
+#containerBemVindo h1 span {
   color: #C51F5D;
   font-weight: 200;
 }
-.containerBemVindo form {
+#containerBemVindo form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
 }
-.containerBemVindo form input {
+#containerBemVindo form input {
   margin-bottom: 60px;
 }
 

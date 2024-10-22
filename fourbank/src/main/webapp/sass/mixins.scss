@@ -14,3 +14,9 @@
         background-color: darken($cor, 10%);
     }
 }
+
+@mixin boxsForm($cor) {
+    margin: 3px solid $cor;
+    width: 600px;
+    height: 500px;
+}
