@@ -15,6 +15,10 @@
     }
 }
 
+@mixin boxFuncs{
+    
+}
+
 @mixin boxsForm($cor) {
     margin: 3px solid $cor;
     width: 600px;

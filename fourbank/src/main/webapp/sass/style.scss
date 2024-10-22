@@ -23,6 +23,18 @@ body {
     @include botao1($cor-1, 170px);
 }
 
+.btn-menu{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+
+    &:hover {
+        color: $cor-1;
+    }
+}
+
 // menu
 .menu {
     background-color: $cor-3;

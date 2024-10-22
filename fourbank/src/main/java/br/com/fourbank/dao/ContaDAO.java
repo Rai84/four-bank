@@ -1,9 +1,7 @@
 package br.com.fourbank.dao;
 
-import br.com.fourbank.model.Conta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ContaDAO {
