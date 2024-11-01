@@ -1,6 +1,8 @@
 package br.com.fourbank.model;
 
+
 public class Cliente {
+    private int id; // Adicione a propriedade id
     private String nome;
     private String cpf;
     private String endereco;
@@ -9,6 +11,14 @@ public class Cliente {
     private String dataNascimento;
     private String senha;
 
+    // Getters e Setters para cada propriedade, incluindo id
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNome() {
         return nome;
     }

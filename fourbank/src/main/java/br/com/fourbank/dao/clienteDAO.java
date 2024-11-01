@@ -1,42 +1,41 @@
 package br.com.fourbank.dao;
 
-import br.com.fourbank.model.Cliente;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import br.com.fourbank.model.Cliente;
 
 public class ClienteDAO {
-    public void insert(Cliente c) {
-        String SQL = "INSERT INTO CLIENTE (NOME, CPF, ENDERECO, TELEFONE, EMAIL, DATA_NASCIMENTO, SENHA) VALUES (?, ?, ?, ?, ?, ?, ?)";
-    
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:h2:~/test", "admin", "admin");
-            System.out.println("Conectado ao banco de dados com sucesso!");
-    
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-    
-            preparedStatement.setString(1, c.getNome());
-            preparedStatement.setString(2, c.getCpf());
-            preparedStatement.setString(3, c.getEndereco());
-            preparedStatement.setString(4, c.getTelefone());
-            preparedStatement.setString(5, c.getEmail());
-            preparedStatement.setString(6, c.getDataNascimento());
-            preparedStatement.setString(7, c.getSenha());
-    
-            System.out.println("Inserindo dados no banco de dados...");
-            preparedStatement.executeUpdate(); // Execute a inserção
-    
-            System.out.println("Dados inseridos com sucesso!");
-    
-            preparedStatement.close(); // Feche a declaração
-            connection.close(); // Feche a conexão
-        } catch (SQLException e) {
-            System.out.println("Erro ao conectar ao banco de dados!");
-            e.printStackTrace();
-        }
-    }
-    
 
+    public boolean criarCliente(Cliente cliente) {
+        String SQL = "INSERT INTO CLIENTE (NOME, CPF, ENDERECO, TELEFONE, EMAIL, DATA_NASCIMENTO, SENHA) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL, PreparedStatement.RETURN_GENERATED_KEYS)) {
+
+            preparedStatement.setString(1, cliente.getNome());
+            preparedStatement.setString(2, cliente.getCpf());
+            preparedStatement.setString(3, cliente.getEndereco());
+            preparedStatement.setString(4, cliente.getTelefone());
+            preparedStatement.setString(5, cliente.getEmail());
+            preparedStatement.setString(6, cliente.getDataNascimento());
+            preparedStatement.setString(7, cliente.getSenha());
+
+            int affectedRows = preparedStatement.executeUpdate();
+
+            if (affectedRows > 0) {
+                // Obter o ID gerado
+                try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        cliente.setId(generatedKeys.getInt(1)); // Supondo que você tenha um método setId na classe Cliente
+                    }
+                }
+                return true; // Cliente criado com sucesso
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao criar cliente: " + e.getMessage());
+        }
+        return false; // Falha na criação do cliente
+    }
 }
