@@ -57,30 +57,28 @@ public class loginDAO {
     }
 
     public Conta obterInformacoesConta(String cpf) {
-    Conta conta = null;
-    String SQL = "SELECT * FROM conta WHERE cpf_cliente = ?";
+        Conta conta = null;
+        String SQL = "SELECT * FROM conta WHERE cpf_cliente = ?";
 
-    try (Connection connection = DatabaseConnection.getConnection();
-         PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
 
-        preparedStatement.setString(1, cpf);
+            preparedStatement.setString(1, cpf);
 
-        try (ResultSet resultSet = preparedStatement.executeQuery()) {
-            if (resultSet.next()) {
-                conta = new Conta(
-                    resultSet.getInt("numeroConta"), 
-                    resultSet.getDouble("saldo"), 
-                    resultSet.getInt("clienteId")
-                ); // Passando os valores do ResultSet para o construtor
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    conta = new Conta(
+                        resultSet.getInt("numeroConta"), 
+                        resultSet.getDouble("saldo"), 
+                        resultSet.getInt("clienteId")
+                    ); // Passando os valores do ResultSet para o construtor
+                }
             }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
-    } catch (SQLException e) {
-        e.printStackTrace();
+        return conta;
     }
-
-    return conta;
-}
-
-
 }

@@ -23,4 +23,19 @@
     margin: 3px solid $cor;
     width: 600px;
     height: 500px;
+    color: #000000;
+}
+
+@mixin boxHome {
+    width: 35vw;
+    height: 35vh;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+}
+
+@mixin btnsHome {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
