@@ -3,20 +3,19 @@ package br.com.fourbank.model;
 public class Conta {
     private int numeroConta;
     private double saldo;
-    private int clienteId;
+    private String cpf;
 
-    public Conta(int numeroConta, double saldo, int clienteId) {
+    public Conta(int numeroConta, double saldo, String cpf) {
         this.numeroConta = numeroConta;
         this.saldo = saldo;
-        this.clienteId = clienteId;
+        this.cpf = cpf; // Corrigido aqui, deve ser clienteCpf
     }
-
 
     public int getNumeroConta() {
         return numeroConta;
     }
 
-    public void setNumeroConta(int numeroConta){
+    public void setNumeroConta(int numeroConta) {
         this.numeroConta = numeroConta;
     }
 
@@ -28,11 +27,11 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public int getClienteId() {
-        return clienteId;
+    public String getClienteCpf() { // Corrigido o tipo para String
+        return cpf;
     }
-    
-    public void setClienteId(int clienteId) {
-        this.clienteId = clienteId;
+
+    public void setClienteCpf(String cpf) { // Corrigido o tipo para String
+        this.cpf = cpf;
     }
 }

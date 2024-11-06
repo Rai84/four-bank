@@ -2,22 +2,40 @@ package br.com.fourbank.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ContaDAO {
 
-    public void createAccountForClient(int clienteId) {
-        String SQL = "INSERT INTO CONTA (NUMEROCONTA, SALDO, CLIENTE_ID) VALUES (NEXT VALUE FOR conta_num_seq, 0.00, ?)";
+    public boolean verificarCpfExistente(String cpf) {
+        String SQL = "SELECT COUNT(*) FROM cliente WHERE cpf = ?";
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
             
-            preparedStatement.setInt(1, clienteId);
-            preparedStatement.executeUpdate();
-            System.out.println("Conta criada com sucesso para o cliente ID: " + clienteId);
-            
+            preparedStatement.setString(1, cpf);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1) > 0;
+            }
         } catch (SQLException e) {
-            System.out.println("Erro ao criar conta para o cliente ID: " + clienteId);
-            System.out.println("Detalhes do erro: " + e.getMessage());
+            e.printStackTrace();
         }
+        return false;
     }
+
+    public boolean createAccountForClient(String clienteCpf) {
+    String SQL = "INSERT INTO conta (clienteCpf, saldo) VALUES (?, ?)"; // Ajuste os campos conforme necessário
+    try (Connection connection = DatabaseConnection.getConnection();
+         PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
+         
+        preparedStatement.setString(1, clienteCpf);
+        preparedStatement.setDouble(2, 0.0); // Ou qualquer valor inicial que desejar
+        
+        return preparedStatement.executeUpdate() > 0; // Retorna true se uma linha foi inserida
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false; // Retorna false em caso de erro
+    }
+}
+
 }

@@ -96,7 +96,7 @@ select {
 
 body {
   font-size: 18px;
-  color: #e0e0e0;
+  color: #000000;
   background-color: #262626;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -117,7 +117,7 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  color: #e0e0e0;
+  color: #000000;
   transition: background-color 0.3s;
 }
 .btn-primary1:hover {
@@ -130,7 +130,7 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  color: #e0e0e0;
+  color: #000000;
   transition: background-color 0.3s;
 }
 .btn-primary2:hover {
@@ -138,6 +138,7 @@ body {
 }
 
 .btn-menu {
+  color: #ffffff;
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -149,6 +150,7 @@ body {
 }
 
 .menu {
+  color: #ffffff;
   background-color: #21201F;
   width: 40px;
   height: 90vh;
@@ -204,6 +206,7 @@ body {
 }
 
 .parent_Home {
+  color: #000000;
   position: absolute;
   right: 0px;
   width: 95vw;

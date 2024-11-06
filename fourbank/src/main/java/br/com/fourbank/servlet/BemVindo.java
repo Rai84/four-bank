@@ -17,9 +17,9 @@ public class BemVindo extends HttpServlet {
         String action = req.getParameter("action");
 
         if ("Faca Login".equals(action)) {
-            req.getRequestDispatcher("login.html").forward(req, resp);
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
         } else if ("Abra a sua conta".equals(action)) {
-            req.getRequestDispatcher("abraSuaConta.html").forward(req, resp);
+            req.getRequestDispatcher("abraSuaConta.jsp").forward(req, resp);
         } else {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Ação não encontrada");
         }

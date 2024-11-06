@@ -1,17 +1,21 @@
 package br.com.fourbank.servlet;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-import br.com.fourbank.dao.loginDAO;
+import br.com.fourbank.model.Cliente;
+import br.com.fourbank.model.Conta;
+import br.com.fourbank.dao.LoginDAO;
 
 @WebServlet("/Login")
-public class login extends HttpServlet {
+public class Login extends HttpServlet {
 
-    private loginDAO dao = new loginDAO();
+    private LoginDAO dao = new LoginDAO();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -21,9 +25,17 @@ public class login extends HttpServlet {
         String senha = req.getParameter("senha");
 
         if (dao.validarLogin(cpf, senha)) {
-            resp.sendRedirect("home.html");
+            Cliente cliente = dao.obterInformacoesCliente(cpf);
+            Conta conta = dao.obterInformacoesConta(cpf);
+            
+            HttpSession session = req.getSession();
+            session.setAttribute("cliente", cliente);
+            session.setAttribute("conta", conta);
+            
+            resp.sendRedirect("home.jsp");
         } else {
-            resp.sendRedirect("login.html");
+            req.setAttribute("errorMessage", "CPF ou senha inválidos.");
+            req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
     }
 }

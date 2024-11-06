@@ -10,6 +10,8 @@ import java.io.IOException;
 import br.com.fourbank.dao.ClienteDAO;
 import br.com.fourbank.dao.ContaDAO;
 import br.com.fourbank.model.Cliente;
+import br.com.fourbank.model.Conta;
+import br.com.fourbank.dao.LoginDAO;
 
 @WebServlet("/AbraSuaConta")
 public class AbraSuaConta extends HttpServlet {
@@ -25,7 +27,6 @@ public class AbraSuaConta extends HttpServlet {
         String dataNascimento = req.getParameter("data_nascimento");
         String senha = req.getParameter("senha");
 
-        // Criação do novo cliente
         Cliente novoCliente = new Cliente();
         novoCliente.setNome(nome);
         novoCliente.setCpf(cpf);
@@ -35,19 +36,28 @@ public class AbraSuaConta extends HttpServlet {
         novoCliente.setDataNascimento(dataNascimento);
         novoCliente.setSenha(senha);
 
-        // Persistir o cliente no banco de dados
         ClienteDAO clienteDAO = new ClienteDAO();
         boolean clienteCriado = clienteDAO.criarCliente(novoCliente); // Verifique se o método está implementado corretamente
 
         if (clienteCriado) {
-            // Criar a conta para o cliente
             ContaDAO contaDAO = new ContaDAO();
-            contaDAO.createAccountForClient(novoCliente.getId()); // Use o ID do novo cliente
-
-            resp.sendRedirect("login.html"); // Redirecionar após a criação
+            if (contaDAO.verificarCpfExistente(novoCliente.getCpf())) {
+                contaDAO.createAccountForClient(novoCliente.getCpf());
+                
+                // Cria uma nova instância do LoginDAO
+                LoginDAO loginDAO = new LoginDAO();
+                Conta novaConta = loginDAO.obterInformacoesConta(novoCliente.getCpf());
+                req.getSession().setAttribute("conta", novaConta);
+                
+                // Redireciona para a página de login ou onde for necessário
+                resp.sendRedirect("login.jsp");
+            } else {
+                req.setAttribute("errorMessage", "CPF não encontrado para criar conta!");
+                req.getRequestDispatcher("error.jsp").forward(req, resp);
+            }
         } else {
             req.setAttribute("errorMessage", "Erro ao criar cliente!");
-            req.getRequestDispatcher("error.jsp").forward(req, resp); // Redirecionar para uma página de erro
+            req.getRequestDispatcher("error.jsp").forward(req, resp);
         }
     }
 }

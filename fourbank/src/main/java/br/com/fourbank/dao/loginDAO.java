@@ -7,11 +7,10 @@ import java.sql.SQLException;
 import br.com.fourbank.model.Cliente; // Importar sua classe Cliente
 import br.com.fourbank.model.Conta;   // Importar sua classe Conta
 
-public class loginDAO {
+public class LoginDAO {
 
     public boolean validarLogin(String cpf, String senha) {
         boolean isValid = false;
-
         String SQL = "SELECT * FROM cliente WHERE cpf = ? AND senha = ?";
 
         try (Connection connection = DatabaseConnection.getConnection();
@@ -58,27 +57,33 @@ public class loginDAO {
 
     public Conta obterInformacoesConta(String cpf) {
         Conta conta = null;
-        String SQL = "SELECT * FROM conta WHERE cpf_cliente = ?";
+        String SQL = "SELECT * FROM conta WHERE cpf = ?"; 
 
         try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
-
+            
             preparedStatement.setString(1, cpf);
-
+            
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
                     conta = new Conta(
                         resultSet.getInt("numeroConta"), 
                         resultSet.getDouble("saldo"), 
-                        resultSet.getInt("clienteId")
-                    ); // Passando os valores do ResultSet para o construtor
+                        resultSet.getString("cpf") 
+                    );
+                } else {
+                    System.out.println("Conta não encontrada para o CPF: " + cpf);
                 }
             }
-
+        
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("Erro ao obter informações da conta: " + e.getMessage());
         }
 
         return conta;
     }
+
+
 }
+
+

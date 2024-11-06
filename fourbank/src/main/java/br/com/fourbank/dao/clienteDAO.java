@@ -38,4 +38,20 @@ public class ClienteDAO {
         }
         return false; // Falha na criação do cliente
     }
+
+    public boolean verificarCpfExistente(String cpf) {
+        String SQL = "SELECT COUNT(*) FROM cliente WHERE cpf = ?";
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
+
+            preparedStatement.setString(1, cpf);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return resultSet.getInt(1) > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false; // Se ocorrer erro ou não houver resultados
+    }
 }
