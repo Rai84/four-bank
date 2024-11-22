@@ -5,31 +5,46 @@
     <title>FourBank</title>
 </head>
 <body class="tema">
-    
-    <form action="/AbraSuaConta" method="post" onsubmit="return validatePassword();">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="name" required>
-        
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" id="cpf" required>
-        
-        <label for="endereco">Endereço:</label>
-        <input type="text" name="endereco" id="endereco" required>
-        <label for="telefone">Telefone:</label>
-        <input type="text" name="telefone" id="telefone" required>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required>
-        
-        <label for="data_nascimento">Data de Nascimento:</label>
-        <input type="text" name="data_nascimento" id="data_nascimento" required>
-        <label for="senha">Senha:</label>
-        <input type="password" name="senha" id="password" required>
-        
-        <label for="confirmPassword">Confirme a Senha:</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" required> 
-        <button type="submit" class="btn-primary1">Cadastrar</button>
-    </form>
-    
+    <div class="FormConta">
+        <h2>Abra sua Conta</h2>
+        <form action="/AbraSuaConta" method="post" onsubmit="return validatePassword();">
+
+            <div class="conta-box">
+                <input type="text" name="nome" id="name" required>
+                <label for="nome">Nome:</label>
+            </div>
+            <div class="conta-box">
+                <input type="text" name="cpf" id="cpf" required>
+                <label for="cpf">CPF:</label>
+            </div>
+            <div class="conta-box">
+                <input type="text" name="endereco" id="endereco" required>
+                <label for="endereco">Endereço:</label>
+            </div>
+            <div class="conta-box">
+                <input type="text" name="telefone" id="telefone" required>
+                <label for="telefone">Telefone:</label>
+            </div>
+            <div class="conta-box">
+                <input type="email" name="email" id="email" required>  
+                <label for="email">Email:</label>
+            </div>
+            <div class="conta-box">
+                <input type="text" name="data_nascimento" id="data_nascimento" required>
+                <label for="data_nascimento">Data de Nascimento:</label>
+            </div>
+            <div class="conta-box">
+                <input type="password" name="senha" id="password" required>
+                <label for="senha">Senha:</label>
+            </div>
+            <div class="conta-box">
+                <input type="password" name="confirmPassword" id="confirmPassword" required> 
+                <label for="confirmPassword">Confirme a Senha:</label>
+            </div>
+                 
+            <button type="submit" class="btn-abraConta">Cadastrar</button>
+        </form>
+    </div>
     <script>
         function validatePassword() {
             const password = document.getElementById("password").value;

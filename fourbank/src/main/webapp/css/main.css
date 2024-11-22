@@ -96,7 +96,7 @@ select {
 
 body {
   font-size: 18px;
-  color: #000000;
+  color: #ffffff;
   background-color: #262626;
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -112,16 +112,16 @@ body {
 }
 
 .btn-primary1 {
-  background-color: #243447;
+  background-color: #1a5092;
   padding: 10px 200px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  color: #000000;
+  color: #ffffff;
   transition: background-color 0.3s;
 }
 .btn-primary1:hover {
-  background-color: rgb(18.8411214953, 27.214953271, 37.1588785047);
+  background-color: rgb(18.2906976744, 56.2790697674, 102.7093023256);
 }
 
 .btn-primary2 {
@@ -130,7 +130,7 @@ body {
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  color: #000000;
+  color: #ffffff;
   transition: background-color 0.3s;
 }
 .btn-primary2:hover {
@@ -181,7 +181,266 @@ body {
   color: #C51F5D;
 }
 
+.login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.login h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.login .login-box {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+  inline-size: -webkit-fill-available;
+}
+.login .login-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  position: relative;
+}
+.login .login-box label {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  transform: translateY(-50%);
+  display: inline-block;
+  text-align: left;
+}
+.login .login-box input:focus ~ label,
+.login .login-box input:valid ~ label {
+  left: 85%;
+  color: #C51F5D;
+  font-size: 12px;
+  text-align: left;
+}
+.login .login-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.login .btn-login {
+  background-color: #C51F5D;
+  padding: 10px 42%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+.login .btn-login:hover {
+  background-color: rgb(152.9342105263, 24.0657894737, 72.1973684211);
+}
+
+.FormConta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.FormConta h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.FormConta .conta-box {
+  position: relative;
+  width: 100%;
+  text-align: right;
+  inline-size: -webkit-fill-available;
+}
+.FormConta .conta-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  position: relative;
+}
+.FormConta .conta-box label {
+  position: absolute;
+  top: 60%;
+  left: 0;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  transform: translateY(-50%);
+  display: inline-block;
+  text-align: left;
+}
+.FormConta .conta-box input:focus ~ label,
+.FormConta .conta-box input:valid ~ label {
+  left: 85%;
+  color: #C51F5D;
+  font-size: 12px;
+  text-align: left;
+}
+.FormConta .conta-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.FormConta .btn-abraConta {
+  background-color: #C51F5D;
+  padding: 10px 36%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+.FormConta .btn-abraConta:hover {
+  background-color: rgb(152.9342105263, 24.0657894737, 72.1973684211);
+}
+
+.FormDados {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.FormDados h2 {
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+.FormDados .dados-box {
+  position: relative;
+  width: 100%;
+  text-align: right;
+  inline-size: -webkit-fill-available;
+}
+.FormDados .dados-box input {
+  width: 100%;
+  padding-top: 20px;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  position: relative;
+}
+.FormDados .dados-box label {
+  position: absolute;
+  left: 0;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #1a5092;
+  pointer-events: none;
+  transition: 0.5s;
+  transform: translateY(-50%);
+  display: inline-block;
+  text-align: left;
+}
+.FormDados .dados-box form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.FormDados .dados-box p {
+  position: relative;
+  top: -38px;
+  left: 160px;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  transform: translateX(-50%);
+  display: flex;
+  text-align: left;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.FormDados .dados-box input:focus ~ p,
+.FormDados .dados-box input:valid ~ p {
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
+}
+.FormDados .btn-dados {
+  background-color: #1a5092;
+  padding: 10px 38%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+.FormDados .btn-dados:hover {
+  background-color: rgb(18.2906976744, 56.2790697674, 102.7093023256);
+}
+
 #containerBemVindo h1 {
+  color: #ffffff;
   text-align: center;
   margin-top: 50px;
   display: flex;
@@ -206,7 +465,7 @@ body {
 }
 
 .parent_Home {
-  color: #000000;
+  color: #ffffff;
   position: absolute;
   right: 0px;
   width: 95vw;
@@ -219,37 +478,55 @@ body {
 }
 .parent_Home .usuario {
   grid-area: 1/2/2/3;
-  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   height: 65px;
 }
 .parent_Home .saldo {
   grid-area: 2/2/3/3;
-  background-color: aqua;
-  width: 35vw;
-  height: 35vh;
-  background-color: #f0f0f0;
+  width: calc(35vw - 20px);
+  height: calc(35vh - 20px);
+  background-color: #21201F;
   border-radius: 25px;
+  padding: 20px;
+}
+.parent_Home .saldo i {
+  padding-right: 10px;
 }
 .parent_Home .caixinha {
   grid-area: 2/4/3/5;
-  width: 35vw;
-  height: 35vh;
-  background-color: #f0f0f0;
+  width: calc(35vw - 20px);
+  height: calc(35vh - 20px);
+  background-color: #21201F;
   border-radius: 25px;
+  padding: 20px;
+}
+.parent_Home .caixinha i {
+  padding-right: 10px;
 }
 .parent_Home .extrato {
   grid-area: 4/2/5/3;
-  width: 35vw;
-  height: 35vh;
-  background-color: #f0f0f0;
+  width: calc(35vw - 20px);
+  height: calc(35vh - 20px);
+  background-color: #21201F;
   border-radius: 25px;
+  padding: 20px;
+}
+.parent_Home .extrato i {
+  padding-right: 10px;
 }
 .parent_Home .emprestimo {
   grid-area: 4/4/5/5;
-  width: 35vw;
-  height: 35vh;
-  background-color: #f0f0f0;
+  width: calc(35vw - 20px);
+  height: calc(35vh - 20px);
+  background-color: #21201F;
   border-radius: 25px;
+  padding: 20px;
+}
+.parent_Home .emprestimo i {
+  padding-right: 10px;
 }
 .parent_Home .btns_principais {
   grid-area: 3/2/4/3;
@@ -262,35 +539,51 @@ body {
 }
 .parent_Home .btns_principais .btn1 {
   grid-area: 1/1/2/2;
-  background-color: green;
   cursor: pointer;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  background-color: #262626;
+  border: 2px solid #C51F5D;
+}
+.parent_Home .btns_principais .btn1:hover {
+  border: 2px solid #1a5092;
 }
 .parent_Home .btns_principais .btn2 {
   grid-area: 1/2/2/3;
-  background-color: red;
   cursor: pointer;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  background-color: #262626;
+  border: 2px solid #C51F5D;
+}
+.parent_Home .btns_principais .btn2:hover {
+  border: 2px solid #1a5092;
 }
 .parent_Home .btns_principais .btn3 {
   grid-area: 1/3/2/4;
-  background-color: blue;
   cursor: pointer;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  background-color: #262626;
+  border: 2px solid #C51F5D;
+}
+.parent_Home .btns_principais .btn3:hover {
+  border: 2px solid #1a5092;
 }
 .parent_Home .btns_principais .btn4 {
   grid-area: 1/4/2/5;
-  background-color: yellow;
   cursor: pointer;
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  background-color: #262626;
+  border: 2px solid #C51F5D;
+}
+.parent_Home .btns_principais .btn4:hover {
+  border: 2px solid #1a5092;
 }
 
 /*# sourceMappingURL=main.css.map */

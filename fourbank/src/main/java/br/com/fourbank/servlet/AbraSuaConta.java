@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import br.com.fourbank.dao.ClienteDAO;
-import br.com.fourbank.dao.ContaDAO;
 import br.com.fourbank.model.Cliente;
 import br.com.fourbank.model.Conta;
 import br.com.fourbank.dao.LoginDAO;
@@ -37,24 +36,14 @@ public class AbraSuaConta extends HttpServlet {
         novoCliente.setSenha(senha);
 
         ClienteDAO clienteDAO = new ClienteDAO();
-        boolean clienteCriado = clienteDAO.criarCliente(novoCliente); // Verifique se o método está implementado corretamente
+        boolean clienteCriado = clienteDAO.criarCliente(novoCliente); // Verifique se o método está implementado
 
         if (clienteCriado) {
-            ContaDAO contaDAO = new ContaDAO();
-            if (contaDAO.verificarCpfExistente(novoCliente.getCpf())) {
-                contaDAO.createAccountForClient(novoCliente.getCpf());
-                
-                // Cria uma nova instância do LoginDAO
-                LoginDAO loginDAO = new LoginDAO();
-                Conta novaConta = loginDAO.obterInformacoesConta(novoCliente.getCpf());
-                req.getSession().setAttribute("conta", novaConta);
-                
-                // Redireciona para a página de login ou onde for necessário
-                resp.sendRedirect("login.jsp");
-            } else {
-                req.setAttribute("errorMessage", "CPF não encontrado para criar conta!");
-                req.getRequestDispatcher("error.jsp").forward(req, resp);
-            }
+            LoginDAO loginDAO = new LoginDAO();
+            Conta novaConta = loginDAO.obterInformacoesConta(novoCliente.getId()); // Supondo que você tenha um método obterInformacoesConta
+            req.getSession().setAttribute("conta", novaConta);
+            
+            resp.sendRedirect("login.jsp");
         } else {
             req.setAttribute("errorMessage", "Erro ao criar cliente!");
             req.getRequestDispatcher("error.jsp").forward(req, resp);

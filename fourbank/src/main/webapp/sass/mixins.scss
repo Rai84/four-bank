@@ -27,10 +27,11 @@
 }
 
 @mixin boxHome {
-    width: 35vw;
-    height: 35vh;
-    background-color: #f0f0f0;
+    width: calc(35vw - 20px);
+    height: calc(35vh - 20px);
+    background-color: $cor-3;
     border-radius: 25px;
+    padding: 20px;
 }
 
 @mixin btnsHome {
@@ -38,4 +39,255 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    background-color: $cor-fundo;
+    border: 2px solid $cor-1;
+
+    &:hover {
+        border: 2px solid $cor-2;
+    }
+
+
+}
+
+@mixin login {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+
+    h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    .login-box {
+        position: relative;
+        margin-bottom: 20px; 
+        width: 100%;
+        text-align: right;
+        inline-size: -webkit-fill-available;
+    }
+
+    .login-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        position: relative;
+    }
+
+    .login-box label {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        padding: 20px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: 0.5s;
+        transform: translateY(-50%);
+        display: inline-block;
+        text-align: left; 
+    }
+
+    .login-box input:focus~label,
+    .login-box input:valid~label {
+        left: 85%; 
+        color: $cor-1;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .login-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        margin-top: 40px;
+        letter-spacing: 4px;
+    }
+}
+
+@mixin FormConta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+
+    h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    .conta-box {
+        position: relative;
+        // margin-bottom: 20px;
+        width: 100%;
+        text-align: right;
+        inline-size: -webkit-fill-available;
+    }
+
+    .conta-box input {
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 10px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        position: relative;
+    }
+
+    .conta-box label {
+        position: absolute;
+        top: 60%;
+        left: 0;
+        padding: 20px 0;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: 0.5s;
+        transform: translateY(-50%);
+        display: inline-block;
+        text-align: left;
+    }
+
+    .conta-box input:focus~label,
+    .conta-box input:valid~label {
+        left: 85%;
+        color: $cor-1;
+        font-size: 12px;
+        text-align: left;
+    }
+
+    .conta-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        margin-top: 40px;
+        letter-spacing: 4px;
+    }
+}
+
+@mixin FormDados {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+
+    h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #fff;
+        text-align: center;
+    }
+
+    .dados-box {
+        position: relative;
+        // margin-bottom: 20px;
+        width: 100%;
+        text-align: right;
+        inline-size: -webkit-fill-available;
+    }
+
+    .dados-box input {
+        width: 100%;
+        padding-top: 20px;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 20px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+        position: relative;
+    }
+
+    .dados-box label {
+        position: absolute;
+        left: 0;
+        padding: 20px 0;
+        font-size: 16px;
+        color: $cor-2;
+        pointer-events: none;
+        transition: 0.5s;
+        transform: translateY(-50%);
+        display: inline-block;
+        text-align: left;
+    }
+
+    .dados-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: 0.5s;
+        margin-top: 40px;
+        letter-spacing: 4px;
+    }
+
+    .dados-box p {
+        position: relative;
+        top: -38px;
+        left: 160px;
+        font-size: 16px;
+        color: #fff;
+        pointer-events: none;
+        transition: 0.5s;
+        transform: translateX(-50%);
+        display: flex;
+        text-align: left;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .dados-box input:focus~p,
+    .dados-box input:valid~p {
+        opacity: 0;
+        transform: translateX(-10px);
+        pointer-events: none;
+    }
 }

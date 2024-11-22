@@ -1,6 +1,5 @@
 package br.com.fourbank.model;
 
-
 public class Cliente {
     private int id; // Adicione a propriedade id
     private String nome;
@@ -19,6 +18,7 @@ public class Cliente {
     public void setId(int id) {
         this.id = id;
     }
+
     public String getNome() {
         return nome;
     }
