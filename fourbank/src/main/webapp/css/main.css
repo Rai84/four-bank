@@ -104,6 +104,38 @@ body {
   justify-content: center;
 }
 
+.menu {
+  color: #ffffff;
+  background-color: #21201F;
+  width: 40px;
+  height: 90vh;
+  display: flex;
+  margin-left: 15px;
+  border-radius: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  left: 5px;
+  top: 35px;
+}
+.menu li i {
+  font-size: 25px;
+  margin-top: 10px;
+  display: block;
+}
+.menu li i:hover {
+  color: #C51F5D;
+}
+.menu a {
+  font-size: 25px;
+  margin-bottom: 10px;
+  display: block;
+}
+.menu a:hover {
+  color: #C51F5D;
+}
+
 .boxsForm {
   margin: 3px solid #C51F5D;
   width: 600px;
@@ -149,36 +181,34 @@ body {
   color: #C51F5D;
 }
 
-.menu {
+.active {
+  color: #C51F5D;
+  /* Rosa */
+}
+
+#containerBemVindo h1 {
   color: #ffffff;
-  background-color: #21201F;
-  width: 40px;
-  height: 90vh;
+  text-align: center;
+  margin-top: 50px;
   display: flex;
-  margin-left: 15px;
-  border-radius: 100px;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 40px;
+  font-weight: 700;
+}
+#containerBemVindo h1 span {
+  color: #C51F5D;
+  font-weight: 200;
+}
+#containerBemVindo form {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  left: 5px;
-  top: 35px;
+  justify-content: center;
+  margin-top: 50px;
 }
-.menu li i {
-  font-size: 25px;
-  margin-top: 10px;
-  display: block;
-}
-.menu li i:hover {
-  color: #C51F5D;
-}
-.menu a {
-  font-size: 25px;
-  margin-bottom: 10px;
-  display: block;
-}
-.menu a:hover {
-  color: #C51F5D;
+#containerBemVindo form input {
+  margin-bottom: 60px;
 }
 
 .login {
@@ -439,31 +469,6 @@ body {
   background-color: rgb(18.2906976744, 56.2790697674, 102.7093023256);
 }
 
-#containerBemVindo h1 {
-  color: #ffffff;
-  text-align: center;
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  font-size: 40px;
-  font-weight: 700;
-}
-#containerBemVindo h1 span {
-  color: #C51F5D;
-  font-weight: 200;
-}
-#containerBemVindo form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 50px;
-}
-#containerBemVindo form input {
-  margin-bottom: 60px;
-}
-
 .parent_Home {
   color: #ffffff;
   position: absolute;
@@ -492,6 +497,14 @@ body {
   border-radius: 25px;
   padding: 20px;
 }
+.parent_Home .saldo .box_Home {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .parent_Home .saldo i {
   padding-right: 10px;
 }
@@ -502,6 +515,14 @@ body {
   background-color: #21201F;
   border-radius: 25px;
   padding: 20px;
+}
+.parent_Home .caixinha .box_Home {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .parent_Home .caixinha i {
   padding-right: 10px;
@@ -514,6 +535,14 @@ body {
   border-radius: 25px;
   padding: 20px;
 }
+.parent_Home .extrato .box_Home {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .parent_Home .extrato i {
   padding-right: 10px;
 }
@@ -525,8 +554,55 @@ body {
   border-radius: 25px;
   padding: 20px;
 }
+.parent_Home .emprestimo .box_Home {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .parent_Home .emprestimo i {
   padding-right: 10px;
+}
+.parent_Home .emprestimo p span {
+  font-size: 10px;
+  padding-left: 60%;
+}
+.parent_Home .emprestimo .btn_emprestimo {
+  background-color: #1a5092;
+  padding: 10px 5%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+.parent_Home .emprestimo .btn_emprestimo:hover {
+  background-color: rgb(18.2906976744, 56.2790697674, 102.7093023256);
+}
+.parent_Home .emprestimo .box_TxtEmprestimo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 40p h2;
+  gap-position: relative;
+  gap-right: 1%;
+  gap-padding-bottom: 10px;
+}
+.parent_Home .emprestimo .box_emprestimo {
+  display: flex;
+  align-items: center;
+}
+.parent_Home .emprestimo .box_emprestimo h3 {
+  width: 450px;
+  font-size: 50px;
+}
+.parent_Home .emprestimo .txt_Valor {
+  position: relative;
+  right: 35%;
+  top: -5px;
 }
 .parent_Home .btns_principais {
   grid-area: 3/2/4/3;
@@ -545,6 +621,10 @@ body {
   border-radius: 50%;
   background-color: #262626;
   border: 2px solid #C51F5D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 .parent_Home .btns_principais .btn1:hover {
   border: 2px solid #1a5092;
@@ -557,6 +637,10 @@ body {
   border-radius: 50%;
   background-color: #262626;
   border: 2px solid #C51F5D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 .parent_Home .btns_principais .btn2:hover {
   border: 2px solid #1a5092;
@@ -569,6 +653,10 @@ body {
   border-radius: 50%;
   background-color: #262626;
   border: 2px solid #C51F5D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 .parent_Home .btns_principais .btn3:hover {
   border: 2px solid #1a5092;
@@ -581,9 +669,286 @@ body {
   border-radius: 50%;
   background-color: #262626;
   border: 2px solid #C51F5D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
 }
 .parent_Home .btns_principais .btn4:hover {
   border: 2px solid #1a5092;
+}
+
+.box_caixinha {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 35px;
+}
+.box_caixinha .box_caixinha2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30vw;
+}
+.box_caixinha .box_caixinha2 .btn_caixinha {
+  background-color: #1a5092;
+  padding: 10px 5%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+.box_caixinha .box_caixinha2 .btn_caixinha:hover {
+  background-color: rgb(18.2906976744, 56.2790697674, 102.7093023256);
+}
+.box_caixinha .caixinha_saldo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30vw;
+}
+.box_caixinha .caixinha_saldo h2 {
+  font-size: 50px;
+}
+
+.fundo_emprestimo {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.895);
+  z-index: 1;
+  top: 0px;
+  left: 500vw;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.5s ease;
+}
+.fundo_emprestimo .FormsEmprestimo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #21201F;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.fundo_emprestimo .FormsEmprestimo .box_TxtEmprestimo {
+  display: flex;
+  gap: 60px;
+  margin: 0 0 30px;
+  align-items: center;
+}
+.fundo_emprestimo .FormsEmprestimo .box_TxtEmprestimo h2 {
+  padding: 0;
+  color: #fff;
+  white-space: nowrap;
+}
+.fundo_emprestimo .FormsEmprestimo .box_TxtEmprestimo button i {
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+.fundo_emprestimo .FormsEmprestimo .box_FormsEmprestimo {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+  inline-size: -webkit-fill-available;
+}
+.fundo_emprestimo .FormsEmprestimo .box_FormsEmprestimo input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  position: relative;
+}
+.fundo_emprestimo .FormsEmprestimo .box_FormsEmprestimo label {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  transform: translateY(-50%);
+  display: inline-block;
+  text-align: left;
+}
+.fundo_emprestimo .FormsEmprestimo .box_FormsEmprestimo input:focus ~ label,
+.fundo_emprestimo .FormsEmprestimo .box_FormsEmprestimo input:valid ~ label {
+  left: 65%;
+  color: #C51F5D;
+  font-size: 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+.fundo_emprestimo .FormsEmprestimo .box_FormsEmprestimo form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+.fundo_emprestimo .btn_emprestimo2 {
+  background-color: #C51F5D;
+  padding: 10px 36%;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+.fundo_emprestimo .btn_emprestimo2:hover {
+  background-color: rgb(152.9342105263, 24.0657894737, 72.1973684211);
+}
+
+.fundo_emprestimo.ativo {
+  left: 0;
+}
+
+.atendimento {
+  color: #ffffff;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 95vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 8px;
+  align-items: center;
+}
+.atendimento h1 {
+  grid-column: span 2/span 2;
+  font-size: 40px;
+  font-weight: 600;
+}
+.atendimento .btn_duvidasChat {
+  background-color: #21201F;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 30px;
+  font-size: 40px;
+  transition: background-color 0.3s;
+  grid-column: span 4/span 4;
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+.atendimento .btn_duvidasChat:hover {
+  background-color: rgb(6.703125, 6.5, 6.296875);
+}
+.atendimento .btn_duvidasChat i {
+  padding-left: 50px;
+}
+.atendimento .btn_duvidasChat div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+}
+.atendimento .btn_duvidasChat div h2 {
+  font-weight: 600;
+  font-size: 25px;
+}
+.atendimento .btn_duvidasWhatsapp {
+  background-color: #21201F;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 30px;
+  font-size: 40px;
+  transition: background-color 0.3s;
+  grid-column: span 4/span 4;
+  grid-column-start: 3;
+  grid-row-start: 3;
+  gap: 30px;
+}
+.atendimento .btn_duvidasWhatsapp:hover {
+  background-color: rgb(6.703125, 6.5, 6.296875);
+}
+.atendimento .btn_duvidasWhatsapp i {
+  padding-left: 50px;
+}
+.atendimento .btn_duvidasWhatsapp div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+}
+.atendimento .btn_duvidasWhatsapp div h2 {
+  font-weight: 600;
+  font-size: 25px;
+}
+.atendimento h2 {
+  grid-column: span 4/span 4;
+  grid-column-start: 3;
+  grid-row-start: 4;
+  font-size: 40px;
+}
+.atendimento .duvidasR {
+  grid-column: span 4/span 4;
+  grid-column-start: 3;
+  grid-row-start: 5;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 20px;
+}
+.atendimento .duvidasR .btn_duvidasR {
+  background-color: #21201F;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: #ffffff;
+  display: flex;
+  height: 80px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+.atendimento .duvidasR .btn_duvidasR:hover {
+  background-color: rgb(6.703125, 6.5, 6.296875);
+}
+.atendimento a {
+  grid-column: span 3/span 3;
+  grid-column-start: 1;
+  font-size: 20px;
+  width: 161px;
+  border-bottom: 1px solid #ffffff;
 }
 
 /*# sourceMappingURL=main.css.map */

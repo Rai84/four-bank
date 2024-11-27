@@ -11,33 +11,7 @@ body {
     justify-content: center;
 }
 
-.boxsForm {
-    @include boxsForm($cor-1);
-}
-
-.btn-primary1 {
-    @include botao1($cor-2, 200px);
-}
-
-.btn-primary2 {
-    @include botao1($cor-1, 170px);
-}
-
-.btn-menu{
-    color: #ffffff;
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 30px;
-    cursor: pointer;
-
-    &:hover {
-        color: $cor-1;
-    }
-}
-
-// menu
-.menu {
+.menu {                                                                  // menu
     color: #ffffff;
     background-color: $cor-3;
     width: 40px;
@@ -69,51 +43,43 @@ body {
         margin-bottom: 10px;
         display: block;
     }
-
     a:hover {
+        color: $cor-1;
+    }  
+}
+
+.boxsForm {
+    @include boxsForm($cor-1);
+}
+
+.btn-primary1 {
+    @include botao1($cor-2, 200px);
+}
+
+.btn-primary2 {
+    @include botao1($cor-1, 170px);
+}
+
+.btn-menu {
+    color: #ffffff;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+
+    &:hover {
         color: $cor-1;
     }
 }
 
-// login
-
-.login {
-    @include login;
-
-    .btn-login {
-        @include botao1($cor-1, 42%);
-    }
+.active {
+    color: $cor-1;
+    /* Rosa */
 }
 
+#containerBemVindo { //                                      tela de boas vindas
 
-
-// abra sua conta
-
-.FormConta {
-    @include FormConta;
-
-    .btn-abraConta {
-        @include botao1($cor-1, 36%);
-    }
-}
-
-
-
-// tela 1
-
-.FormDados {
-    @include FormDados;
-
-    .btn-dados {
-        @include botao1($cor-2, 38%);
-    }
-}
-
-
-
-// tela 2
-#containerBemVindo{
-    
     h1 {
         color: $cor-texto;
         text-align: center;
@@ -143,7 +109,43 @@ body {
     }
 }
 
-.parent_Home{
+//                                                                         login
+
+.login {
+    @include login;
+
+    .btn-login {
+        @include botao1($cor-1, 42%);
+    }
+}
+
+//                                                           tela abra sua conta
+
+.FormConta {
+    @include FormConta;
+
+    .btn-abraConta {
+        @include botao1($cor-1, 36%);
+    }
+}
+
+// tela 1
+
+.FormDados {
+    @include FormDados;
+
+    .btn-dados {
+        @include botao1($cor-2, 38%);
+    }
+}
+
+
+
+
+
+// tela home
+
+.parent_Home{ // grid da tela home
     color: $cor-texto;
     position: absolute;
     right: 0px;
@@ -155,7 +157,7 @@ body {
     grid-column-gap: 0px;
     grid-row-gap: 10px;
 
-    .usuario { grid-area: 1 / 2 / 2 / 3;
+    .usuario { grid-area: 1 / 2 / 2 / 3; // usuario
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -163,37 +165,75 @@ body {
         height: 65px;
     }
 
-    .saldo { grid-area: 2 / 2 / 3 / 3; 
+    .saldo { grid-area: 2 / 2 / 3 / 3; // saldo 
         @include boxHome;
 
         i {
             padding-right: 10px;
         }
     }
-    .caixinha { grid-area: 2 / 4 / 3 / 5; 
+    .caixinha { grid-area: 2 / 4 / 3 / 5; // caixinha 
         @include boxHome;
 
         i {
             padding-right: 10px;
         }
     }
-    .extrato { grid-area: 4 / 2 / 5 / 3; 
+    .extrato { grid-area: 4 / 2 / 5 / 3; // extrato 
         @include boxHome;
 
         i {
             padding-right: 10px;
         }
     }
-    .emprestimo { grid-area: 4 / 4 / 5 / 5; 
+    .emprestimo { grid-area: 4 / 4 / 5 / 5; // emprestimo 
         @include boxHome;
 
         i {
             padding-right: 10px;
         }
+
+        p span{
+            font-size: 10px;
+            padding-left: 60%;
+        }
+
+        .btn_emprestimo {
+            @include botao1($cor-2, 5%);
+        }
+
+        .box_TxtEmprestimo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            gap: 40p
+
+            h2 {
+                position: relative;
+                right: 1%;
+                padding-bottom: 10px;
+            }
+        }
+
+        .box_emprestimo {
+            display: flex;
+            align-items: center;
+
+            h3 {
+                width: 450px;
+                font-size: 50px;
+            }
+        }
+
+        .txt_Valor{
+            position: relative;
+            right: 35%;
+            top: -5px;
+        }
     }
 
-    .btns_principais { grid-area: 3 / 2 / 4 / 3;
-            
+    .btns_principais { grid-area: 3 / 2 / 4 / 3; // botoes principais   
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: 1fr;
@@ -216,5 +256,127 @@ body {
     }
 }
 
+// Caixinha
+.box_caixinha {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 35px;
 
+    .box_caixinha2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30vw;
 
+        .btn_caixinha {
+            @include botao1($cor-2, 5%);
+        }
+    }
+
+    .caixinha_saldo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 30vw;
+
+        h2 {
+            font-size: 50px;
+        }
+    }
+}
+
+// emprestimo
+
+.fundo_emprestimo {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.895);
+    z-index: 1;
+    top: 0px;
+    left: 500vw;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.5s ease;
+
+    .FormsEmprestimo {
+        @include FormsEmprestimo;
+    }
+
+    .btn_emprestimo2 {
+        @include botao1($cor-1, 36%);
+    }
+}
+
+.fundo_emprestimo.ativo {
+    left: 0;
+}
+
+//                                                              tela atendimento
+
+.atendimento {
+    color: $cor-texto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 95vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+    align-items: center;
+
+    h1 {
+        grid-column: span 2 / span 2;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .btn_duvidasChat {
+        @include btnAtendimento;
+        grid-column: span 4 / span 4;
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+
+    .btn_duvidasWhatsapp {
+        @include btnAtendimento;
+        grid-column: span 4 / span 4;
+        grid-column-start: 3;
+        grid-row-start: 3;
+        gap: 30px;
+    }
+
+    h2 {
+        grid-column: span 4 / span 4;
+        grid-column-start: 3;
+        grid-row-start: 4;
+        font-size: 40px;
+    }
+
+    .duvidasR {
+        grid-column: span 4 / span 4;
+        grid-column-start: 3;
+        grid-row-start: 5;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 20px;
+
+        .btn_duvidasR {
+            @include btn_duvidas;
+        }
+    }
+    
+    a {
+        grid-column: span 3 / span 3;
+        grid-column-start: 1;
+        font-size: 20px;
+        width: 161px;
+        border-bottom: 1px solid $cor-texto;
+    }
+}

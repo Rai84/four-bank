@@ -34,11 +34,17 @@ document.addEventListener("DOMContentLoaded", function () {
             // Adicionar evento de clique para mover o fundo do empréstimo (dentro do `then`)
             const btnEmprestimo = document.querySelector('.btn_emprestimo');
             const fundoEmprestimo = document.querySelector('.fundo_emprestimo');
+            const btn_fecharEmprestimo = document.querySelector('.btn_fecharEmprestimo');
 
             if (btnEmprestimo && fundoEmprestimo) {
                 btnEmprestimo.addEventListener('click', function() {
                     fundoEmprestimo.classList.add('ativo');
-                }, { once: true }); // O evento será acionado apenas uma vez
+                }); 
+            }
+            if (btn_fecharEmprestimo && fundoEmprestimo) {
+                btn_fecharEmprestimo.addEventListener('click', function() {
+                    fundoEmprestimo.classList.remove('ativo');
+                });
             }
         })
         .catch((error) => console.error("Erro ao carregar a tela emprestimo:", error));
