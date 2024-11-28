@@ -20,7 +20,7 @@
     <script src="JS/ajuda.js"></script>
 
     <div class="FormDados">
-        <form action="/AbraSuaConta" method="post">
+        <form action="/AtualizarDados" method="post">
             <div class="dados-box">
                 <input type="text" name="nome" id="name" value="<%= cliente.getNome() %>" required>
                 <label for="nome">Nome:</label>
