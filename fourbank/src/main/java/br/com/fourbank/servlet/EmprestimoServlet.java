@@ -40,6 +40,7 @@ public class EmprestimoServlet extends HttpServlet {
                 return;
             }
 
+            // Criar o objeto Emprestimo
             Emprestimo emprestimo = new Emprestimo();
             emprestimo.setClienteId(clienteId);
             emprestimo.setValor(valor);
@@ -47,19 +48,25 @@ public class EmprestimoServlet extends HttpServlet {
             emprestimo.setDataVencimento(dataVencimento);
             emprestimo.setParcelas(parcelas);
 
+            // Adicionar o empréstimo
             boolean sucesso = emprestimoDAO.adicionarEmprestimo(emprestimo);
 
             if (sucesso) {
+                // Atualiza a conta
                 Conta conta = contaDAO.obterContaPorCliente(clienteId);
                 if (conta != null) {
                     double novoSaldo = conta.getSaldo() + valor;
                     conta.setSaldo(novoSaldo);
 
+                    // Atualizar saldo no banco de dados
                     contaDAO.atualizarSaldo(conta);
+
+                    // Atualizar o saldo na sessão
                     request.getSession().setAttribute("saldo", novoSaldo);
                     request.getSession().setAttribute("conta", conta);
 
-                    response.getWriter().println("Empréstimo criado com sucesso! Saldo atualizado.");
+                    // Redirecionar para a página inicial ou página de sucesso
+                    response.sendRedirect("home.jsp"); // Usando sendRedirect para não enviar o formulário novamente
                 } else {
                     response.getWriter().println("Erro: Conta não encontrada para o cliente.");
                 }
@@ -67,8 +74,6 @@ public class EmprestimoServlet extends HttpServlet {
                 response.getWriter().println("Falha ao criar o empréstimo.");
             }
 
-            request.getRequestDispatcher("/home.jsp").forward(request, response);
-            
         } catch (Exception e) {
             response.getWriter().println("Erro ao processar empréstimo: " + e.getMessage());
             e.printStackTrace();
