@@ -1,23 +1,14 @@
 package br.com.fourbank.model;
 
+import java.sql.Date;
+
 public class Emprestimo {
     private int clienteId;
     private double valor;
-    private java.sql.Date dataEmprestimo;
-    private java.sql.Date dataVencimento;
+    private Date dataEmprestimo;
+    private Date dataVencimento;
     private int parcelas;
-    
-    public int getParcelas() {
-        return parcelas;
-    }
 
-    public void setParcelas(int parcelas) {
-        this.parcelas = parcelas;
-    }
-    
-    private String status;
-
-    // Getters e Setters
     public int getClienteId() {
         return clienteId;
     }
@@ -34,27 +25,27 @@ public class Emprestimo {
         this.valor = valor;
     }
 
-    public java.sql.Date getDataEmprestimo() {
+    public Date getDataEmprestimo() {
         return dataEmprestimo;
     }
 
-    public void setDataEmprestimo(java.sql.Date dataEmprestimo) {
+    public void setDataEmprestimo(Date dataEmprestimo) {
         this.dataEmprestimo = dataEmprestimo;
     }
 
-    public java.sql.Date getDataVencimento() {
+    public Date getDataVencimento() {
         return dataVencimento;
     }
 
-    public void setDataVencimento(java.sql.Date dataVencimento) {
+    public void setDataVencimento(Date dataVencimento) {
         this.dataVencimento = dataVencimento;
     }
 
-    public String getStatus() {
-        return status;
+    public int getParcelas() {
+        return parcelas;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setParcelas(int parcelas) {
+        this.parcelas = parcelas;
     }
 }

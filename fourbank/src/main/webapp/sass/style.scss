@@ -287,7 +287,6 @@ body {
 }
 
 // emprestimo
-
 .fundo_emprestimo {
     display: flex;
     position: fixed;
@@ -378,5 +377,52 @@ body {
         font-size: 20px;
         width: 161px;
         border-bottom: 1px solid $cor-texto;
+    }
+}
+
+//                                                             tela notificacoes
+.notificacao {
+    color: $cor-texto;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 95vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 8px;
+    align-items: center;
+
+    h1 {
+        grid-column: span 2 / span 2;
+        font-size: 40px;
+        font-weight: 600;
+    }
+
+    .btn_notificacao {
+        grid-column: span 2 / span 2;
+        grid-column-start: 2;
+    }
+
+    .box_notificacao{
+        @include box_notificacao;
+        grid-column: span 6 / span 6;
+        grid-column-start: 2;
+        grid-row-start: 3;
+    }
+
+    .box_notificacao2{
+        @include box_notificacao;
+        grid-column: span 6 / span 6;
+        grid-column-start: 2;
+        grid-row-start: 4;
+    }
+
+    .box_notificacao3{
+        @include box_notificacao;
+        grid-column: span 6 / span 6;
+        grid-column-start: 2;
+        grid-row-start: 5;
     }
 }

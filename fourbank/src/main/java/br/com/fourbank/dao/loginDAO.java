@@ -10,7 +10,6 @@ import br.com.fourbank.model.Conta;
 
 public class LoginDAO {
 
-    // Método para validar o login
     public boolean validarLogin(String cpf, String senha) {
         boolean isValid = false;
         String SQL = "SELECT cliente_id FROM cliente WHERE cpf = ? AND senha = ?";
@@ -23,15 +22,12 @@ public class LoginDAO {
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
-                    // Se encontrou um cliente, o login é válido
                     int clienteId = resultSet.getInt("cliente_id");
-                    System.out.println("Cliente ID encontrado: " + clienteId); // Log para conferir o cliente_id
+                    System.out.println("Cliente ID encontrado: " + clienteId); 
                     isValid = true;
 
-                    // Agora você pode usar o clienteId para buscar a conta
                     Conta conta = obterInformacoesConta(clienteId);
                     if (conta != null) {
-                        // Supondo que você tenha algum tipo de processo com a conta
                         System.out.println("Conta encontrada: " + conta.getNumeroConta());
                     }
                 }
@@ -44,7 +40,6 @@ public class LoginDAO {
         return isValid;
     }
 
-    // Método para obter informações do cliente
     public Cliente obterInformacoesCliente(String cpf) {
         Cliente cliente = null;
         String SQL = "SELECT * FROM cliente WHERE cpf = ?";
@@ -74,17 +69,16 @@ public class LoginDAO {
         return cliente;
     }
 
-    // Método para obter as informações da conta com base no cliente_id
     public Conta obterInformacoesConta(int clienteId) {
         Conta conta = null;
         String SQL = "SELECT * FROM conta WHERE cliente_id = ?";
 
-        System.out.println("Iniciando obtenção de conta para cliente_id: " + clienteId); // Log para verificar o
+        System.out.println("Iniciando obtenção de conta para cliente_id: " + clienteId); 
 
         try (Connection connection = DatabaseConnection.getConnection();
                 PreparedStatement preparedStatement = connection.prepareStatement(SQL)) {
 
-            preparedStatement.setInt(1, clienteId); // Passando cliente_id para a consulta
+            preparedStatement.setInt(1, clienteId);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
@@ -92,8 +86,8 @@ public class LoginDAO {
                         resultSet.getInt("conta_id"),
                         resultSet.getInt("numeroConta"),
                         resultSet.getDouble("saldo"),
-                        resultSet.getInt("cliente_id")); // Aqui usamos cliente_id
-                    System.out.println("Conta encontrada para cliente_id: " + clienteId); // Confirmação de que a conta
+                        resultSet.getInt("cliente_id")); 
+                    System.out.println("Conta encontrada para cliente_id: " + clienteId); 
                     System.out.println("Detalhes da conta: " + conta.getNumeroConta() + " | Saldo: " + conta.getSaldo());
                 } else {
                     System.out.println("Conta não encontrada para o cliente_id: " + clienteId);

@@ -36,11 +36,11 @@ public class AbraSuaConta extends HttpServlet {
         novoCliente.setSenha(senha);
 
         ClienteDAO clienteDAO = new ClienteDAO();
-        boolean clienteCriado = clienteDAO.criarCliente(novoCliente); // Verifique se o método está implementado
+        boolean clienteCriado = clienteDAO.criarCliente(novoCliente);
 
         if (clienteCriado) {
             LoginDAO loginDAO = new LoginDAO();
-            Conta novaConta = loginDAO.obterInformacoesConta(novoCliente.getId()); // Supondo que você tenha um método obterInformacoesConta
+            Conta novaConta = loginDAO.obterInformacoesConta(novoCliente.getId());
             req.getSession().setAttribute("conta", novaConta);
             
             resp.sendRedirect("login.jsp");
