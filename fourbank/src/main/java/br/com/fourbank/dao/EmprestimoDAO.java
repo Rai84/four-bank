@@ -1,6 +1,5 @@
 package br.com.fourbank.dao;
 
-import br.com.fourbank.model.Caixinha;
 import br.com.fourbank.model.Emprestimo;
 
 import java.sql.Connection;

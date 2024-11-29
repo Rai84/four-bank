@@ -84,8 +84,8 @@
             <p><i class="bi bi-cash-coin"></i>Empréstimo<button><i class="bi bi-caret-left-fill"></i></button></p>
             <div>
                 <% 
-                // Acessa o objeto emprestimo da sessão, não do request
-                Emprestimo emprestimo = (Emprestimo) session.getAttribute("emprestimo");  
+                // Acessa o objeto emprestimo da requisição, não da sessão
+                Emprestimo emprestimo = (Emprestimo) request.getAttribute("emprestimo");  
                 if (emprestimo != null) { 
                 %>
                     <p>Valor do Empréstimo: <%= emprestimo.getValor() %></p>
@@ -100,6 +100,8 @@
                 %>
             </div>
         </div>
+
+
 
         <div class="btns_principais"> 
             <div class="btn1"><a href="consultarExtrato.jsp"><i class="bi bi-x-diamond"></i></a></div>
