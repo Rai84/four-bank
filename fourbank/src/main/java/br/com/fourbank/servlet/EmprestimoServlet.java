@@ -35,6 +35,13 @@ public class EmprestimoServlet extends HttpServlet {
 
             Date dataEmprestimo = new Date(System.currentTimeMillis());
 
+            // Verificar se já existe um empréstimo para o cliente
+            Emprestimo emprestimoExistente = emprestimoDAO.obterEmprestimoPorCliente(clienteId);
+            if (emprestimoExistente != null) {
+                response.getWriter().println("Este cliente já possui um empréstimo.");
+                return; // Não permite que o cliente faça outro empréstimo
+            }
+
             if (valor <= 0) {
                 response.getWriter().println("O valor do empréstimo deve ser maior que zero.");
                 return;
@@ -65,17 +72,23 @@ public class EmprestimoServlet extends HttpServlet {
                     request.getSession().setAttribute("saldo", novoSaldo);
                     request.getSession().setAttribute("conta", conta);
 
-                    // Redirecionar para a página inicial ou página de sucesso
-                    response.sendRedirect("home.jsp"); // Usando sendRedirect para não enviar o formulário novamente
+                    // Passa o objeto emprestimo para o JSP
+                    request.setAttribute("emprestimo", emprestimo);
+
+                    // Redireciona para o JSP
+                    request.getRequestDispatcher("home.jsp").forward(request, response);
                 } else {
-                    response.getWriter().println("Erro: Conta não encontrada para o cliente.");
+                    request.setAttribute("erro", "Erro: Conta não encontrada para o cliente.");
+                    request.getRequestDispatcher("home.jsp").forward(request, response);
                 }
             } else {
-                response.getWriter().println("Falha ao criar o empréstimo.");
+                request.setAttribute("erro", "Falha ao criar o empréstimo.");
+                request.getRequestDispatcher("home.jsp").forward(request, response);
             }
 
         } catch (Exception e) {
-            response.getWriter().println("Erro ao processar empréstimo: " + e.getMessage());
+            request.setAttribute("erro", "Erro ao processar empréstimo: " + e.getMessage());
+            request.getRequestDispatcher("home.jsp").forward(request, response);
             e.printStackTrace();
         }
     }

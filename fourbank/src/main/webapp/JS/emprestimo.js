@@ -1,16 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Carregar o conteúdo do arquivo "emprestimo.jsp"
+document.addEventListener("DOMContentLoaded", () => {
+    // Bloco para carregar a tela de empréstimo
     fetch("emprestimo.jsp") 
-        .then((response) => {
+        .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao carregar a tela emprestimo");
             }
             return response.text();
         })
-        .then((data) => {
+        .then(data => {
             document.getElementById("emprestimo-container").innerHTML = data;
 
-            // Obtenha a data atual após o conteúdo ser inserido
+            // Código adicional relacionado a "emprestimo-container"
             const hoje = new Date();
             const anoAtual = hoje.getFullYear();
             const mesAtual = String(hoje.getMonth() + 1).padStart(2, '0');
@@ -24,28 +24,40 @@ document.addEventListener("DOMContentLoaded", function () {
             const diaMaximo = String(dataMaxima.getDate()).padStart(2, '0');
             const dataMaximaFormatada = `${anoMaximo}-${mesMaximo}-${diaMaximo}`;
 
-            // Defina os valores para o input de data
             const inputData = document.getElementById('inicio_parcela');
             if (inputData) {
                 inputData.min = dataMinima;
                 inputData.max = dataMaximaFormatada;
             }
 
-            // Adicionar evento de clique para mover o fundo do empréstimo (dentro do `then`)
             const btnEmprestimo = document.querySelector('.btn_emprestimo');
             const fundoEmprestimo = document.querySelector('.fundo_emprestimo');
             const btn_fecharEmprestimo = document.querySelector('.btn_fecharEmprestimo');
 
             if (btnEmprestimo && fundoEmprestimo) {
-                btnEmprestimo.addEventListener('click', function() {
+                btnEmprestimo.addEventListener('click', () => {
                     fundoEmprestimo.classList.add('ativo');
-                }); 
+                });
             }
             if (btn_fecharEmprestimo && fundoEmprestimo) {
-                btn_fecharEmprestimo.addEventListener('click', function() {
+                btn_fecharEmprestimo.addEventListener('click', () => {
                     fundoEmprestimo.classList.remove('ativo');
                 });
             }
         })
-        .catch((error) => console.error("Erro ao carregar a tela emprestimo:", error));
+        .catch(error => console.error("Erro ao carregar a tela emprestimo:", error));
+
+    // Bloco para botões abrir/fechar
+    const botaoAbrir = document.querySelector(".emprestimo button");
+    const botaoFechar = document.querySelector(".emprestimo2 button");
+
+    if (botaoAbrir && botaoFechar) {
+        botaoAbrir.addEventListener("click", () => {
+            document.querySelector(".emprestimo2").classList.add("ativo");
+        });
+
+        botaoFechar.addEventListener("click", () => {
+            document.querySelector(".emprestimo2").classList.remove("ativo");
+        });
+    }
 });

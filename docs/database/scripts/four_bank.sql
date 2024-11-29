@@ -5,7 +5,7 @@ CREATE TABLE Cliente (
   endereco VARCHAR(200), -- Endereço do cliente
   telefone VARCHAR(15), -- Telefone como VARCHAR para incluir símbolos como '+', '-'
   email VARCHAR(100) UNIQUE, -- Email único
-  data_nascimento VARCHAR(8), -- Data de nascimento no formato adequado
+  data_nascimento VARCHAR(10), -- Data de nascimento no formato adequado
   senha VARCHAR(255) NOT NULL -- Senha criptografada
 );
 
@@ -13,9 +13,25 @@ CREATE TABLE Conta (
   conta_id INT PRIMARY KEY AUTO_INCREMENT, -- ID único da conta
   numero_conta VARCHAR(20) UNIQUE NOT NULL, -- Número da conta como string para maior flexibilidade
   saldo DECIMAL(15, 2) NOT NULL DEFAULT 0.00, -- Saldo com precisão para valores monetários
-  cliente_id VARCHAR(11) NOT NULL, -- CPF do cliente associado à conta
-  FOREIGN KEY (cliente_id) REFERENCES Cliente(cpf) -- Relacionamento com a tabela Cliente
+  cliente_id INT NOT NULL, -- Alterado para INT
+  FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id) -- Relacionamento com a tabela Cliente
 );
+
+DELIMITER $$
+
+CREATE TRIGGER criar_conta_automaticamente
+AFTER INSERT ON cliente
+FOR EACH ROW
+BEGIN
+    INSERT INTO conta (numero_conta, saldo, cliente_id)
+    VALUES (
+        FLOOR(RAND() * 1000000), -- Número de conta aleatório
+        0.00, 
+        NEW.cliente_id -- Usando o cliente_id do cliente recém-inserido
+    );
+END$$
+
+DELIMITER ;
 
 CREATE TABLE Emprestimo (
   emprestimo_id INT PRIMARY KEY AUTO_INCREMENT, -- ID único do empréstimo
@@ -27,16 +43,11 @@ CREATE TABLE Emprestimo (
   FOREIGN KEY (cliente_id) REFERENCES Cliente(cliente_id) -- Relacionamento com a tabela Cliente
 );
 
-DELIMITER $$
+CREATE TABLE Caixinha 
+( 
+    caixinha_id INT PRIMARY KEY AUTO_INCREMENT,  -- Auto incremento para o id
+    cliente_id INT,  
+    saldoCaixinha DECIMAL(15, 2) NOT NULL DEFAULT 0.00,  -- Tipo DECIMAL para o saldo
+    FOREIGN KEY (cliente_id) REFERENCES cliente(cliente_id)  -- Relacionamento com a tabela Cliente
+);
 
-CREATE TRIGGER adiciona_emprestimo_ao_saldo
-AFTER INSERT ON Emprestimo
-FOR EACH ROW
-BEGIN
-    -- Atualiza o saldo da conta associada ao cliente
-    UPDATE Conta
-    SET saldo = saldo + NEW.valor_emprestimo
-    WHERE cliente_id = NEW.cliente_id;
-END$$
-
-DELIMITER ;

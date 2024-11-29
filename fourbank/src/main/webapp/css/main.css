@@ -565,9 +565,13 @@ body {
 .parent_Home .emprestimo i {
   padding-right: 10px;
 }
+.parent_Home .emprestimo .bi-caret-right-fill {
+  padding-left: 10px;
+  cursor: pointer;
+}
 .parent_Home .emprestimo p span {
   font-size: 10px;
-  padding-left: 60%;
+  padding-left: 55%;
 }
 .parent_Home .emprestimo .btn_emprestimo {
   background-color: #1a5092;
@@ -593,16 +597,47 @@ body {
 }
 .parent_Home .emprestimo .box_emprestimo {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
 }
 .parent_Home .emprestimo .box_emprestimo h3 {
   width: 450px;
   font-size: 50px;
 }
+.parent_Home .emprestimo .box_emprestimo .box_emprestimo2 {
+  display: flex;
+}
 .parent_Home .emprestimo .txt_Valor {
   position: relative;
   right: 35%;
   top: -5px;
+}
+.parent_Home .emprestimo2 {
+  grid-area: 4/4/5/5;
+  width: calc(35vw - 20px);
+  height: calc(35vh - 20px);
+  background-color: #21201F;
+  border-radius: 25px;
+  padding: 20px;
+  display: none;
+}
+.parent_Home .emprestimo2 .box_Home {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.parent_Home .emprestimo2 i {
+  padding-right: 10px;
+}
+.parent_Home .emprestimo2 .bi-caret-left-fill {
+  padding-left: 10px;
+  cursor: pointer;
+}
+.parent_Home .emprestimo2.ativo {
+  display: flex;
 }
 .parent_Home .btns_principais {
   grid-area: 3/2/4/3;
@@ -678,6 +713,10 @@ body {
   border: 2px solid #1a5092;
 }
 
+.txt_saldo {
+  font-size: 50px;
+}
+
 .box_caixinha {
   display: flex;
   align-items: center;
@@ -710,6 +749,105 @@ body {
 }
 .box_caixinha .caixinha_saldo h2 {
   font-size: 50px;
+}
+
+.fundo_caixinha {
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.895);
+  z-index: 1;
+  top: 0px;
+  left: 500vw;
+  align-items: center;
+  justify-content: center;
+  transition: left 0.5s ease;
+}
+.fundo_caixinha .box_caixinha {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: #21201F;
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+.fundo_caixinha .box_caixinha .box_TxtEmprestimo {
+  display: flex;
+  gap: 60px;
+  margin: 0 0 30px;
+  align-items: center;
+}
+.fundo_caixinha .box_caixinha .box_TxtEmprestimo h2 {
+  padding: 0;
+  color: #fff;
+  white-space: nowrap;
+}
+.fundo_caixinha .box_caixinha .box_TxtEmprestimo button i {
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+.fundo_caixinha .box_caixinha .box_FormsEmprestimo {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: right;
+  inline-size: -webkit-fill-available;
+}
+.fundo_caixinha .box_caixinha .box_FormsEmprestimo input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+  position: relative;
+}
+.fundo_caixinha .box_caixinha .box_FormsEmprestimo label {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.5s;
+  transform: translateY(-50%);
+  display: inline-block;
+  text-align: left;
+}
+.fundo_caixinha .box_caixinha .box_FormsEmprestimo input:focus ~ label,
+.fundo_caixinha .box_caixinha .box_FormsEmprestimo input:valid ~ label {
+  left: 65%;
+  color: #C51F5D;
+  font-size: 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+.fundo_caixinha .box_caixinha .box_FormsEmprestimo form a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+}
+
+.fundo_caixinha.ativo {
+  left: 0;
 }
 
 .fundo_emprestimo {

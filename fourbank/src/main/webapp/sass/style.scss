@@ -172,6 +172,7 @@ body {
             padding-right: 10px;
         }
     }
+    
     .caixinha { grid-area: 2 / 4 / 3 / 5; // caixinha 
         @include boxHome;
 
@@ -188,14 +189,18 @@ body {
     }
     .emprestimo { grid-area: 4 / 4 / 5 / 5; // emprestimo 
         @include boxHome;
-
         i {
             padding-right: 10px;
         }
 
+        .bi-caret-right-fill{
+            padding-left: 10px;
+            cursor: pointer;
+        }
+
         p span{
             font-size: 10px;
-            padding-left: 60%;
+            padding-left: 55%;
         }
 
         .btn_emprestimo {
@@ -218,11 +223,17 @@ body {
 
         .box_emprestimo {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
 
             h3 {
                 width: 450px;
                 font-size: 50px;
+            }
+
+            .box_emprestimo2 {
+                display: flex;
+
             }
         }
 
@@ -231,6 +242,23 @@ body {
             right: 35%;
             top: -5px;
         }
+    }
+
+    .emprestimo2{ grid-area: 4 / 4 / 5 / 5; // emprestimo
+        @include boxHome;
+        display: none;
+        i {
+            padding-right: 10px;
+        }
+        
+        .bi-caret-left-fill {
+            padding-left: 10px;
+            cursor: pointer;
+        }
+    }
+
+    .emprestimo2.ativo {
+        display: flex;
     }
 
     .btns_principais { grid-area: 3 / 2 / 4 / 3; // botoes principais   
@@ -254,6 +282,10 @@ body {
             @include btnsHome;
         }
     }
+}
+
+.txt_saldo {
+    font-size: 50px;
 }
 
 // Caixinha
@@ -284,6 +316,28 @@ body {
             font-size: 50px;
         }
     }
+}
+
+.fundo_caixinha {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.895);
+    z-index: 1;
+    top: 0px;
+    left: 500vw;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.5s ease;
+
+    .box_caixinha {
+        @include FormsEmprestimo;
+    }
+}
+
+.fundo_caixinha.ativo {
+    left: 0;
 }
 
 // emprestimo
